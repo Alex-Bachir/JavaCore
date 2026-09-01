@@ -1,4 +1,4 @@
-package javaCore.chapter05Object.exercice;
+package javaCore.chapter05Object.exercice.pen;
 
 public class Pen {
 

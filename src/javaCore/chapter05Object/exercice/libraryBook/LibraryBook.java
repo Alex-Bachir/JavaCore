@@ -1,4 +1,4 @@
-package javaCore.chapter05Object.exercice;
+package javaCore.chapter05Object.exercice.libraryBook;
 
 public class LibraryBook {
 

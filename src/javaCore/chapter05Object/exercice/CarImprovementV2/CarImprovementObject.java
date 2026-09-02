@@ -7,7 +7,7 @@ public class CarImprovementObject {
     String            color;
     double            price;
     double         odometer;
-    boolean isEngineStarted = true;
+    boolean isEngineStarted = false;
 
     // Pas besoin de mettre en paramètre isEngineStarted, car pas besoin de savoir si la voiture est démarrer où pas dans les informations général d'un véhicule
     public CarImprovementObject(String brand, String model, String color, double price, double odometer) {
@@ -22,7 +22,7 @@ public class CarImprovementObject {
 
     public void run(double distance) {
         
-        if (this.isEngineStarted) {
+        if (!this.isEngineStarted) {
         System.out.println("Impossible de rouler, le moteur est à l'arrêt");
         return;
     }

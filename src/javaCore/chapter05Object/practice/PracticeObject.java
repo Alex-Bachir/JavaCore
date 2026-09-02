@@ -3,34 +3,23 @@ package javaCore.chapter05Object.practice;
 public class PracticeObject {
     public static void main(String[] args) {
 
-        PracticeObjectCar car1 = new PracticeObjectCar();
-        PracticeObjectCar car2 = new PracticeObjectCar();
-
-        car1.brand    = "Mercedes";
-        car1.color    =     "noir";
-        car1.model    =      "CLK";
-        car1.odometer =          0;
-        car1.price    =      55000;
-
-        car2.brand    = "Nissan";
-        car2.color    = "Bleu";
-        car2.model    = "Silvia";
-        car2.odometer = 0;
-        car2.price    = 38000;
-
+        PracticeObjectCar car1 = new PracticeObjectCar("Mercedes", "CLK", "noir", 55000, 0);
+        car1.displayInformation();
+        car1.run(123);
+        car1.displayInformation();
+        car1.run(259);
+        car1.displayInformation();
+        
+        PracticeObjectCar car2 = new PracticeObjectCar("Nissan", "Silvia", "Bleu", 38000, 0);
         car2.displayInformation();
         car2.run(800);
         car2.displayInformation();
         car2.run(145);
         car2.displayInformation();  
 
-        System.out.println("----------------------------------------------------------------------------------------------------------------");
+       
 
-        car1.displayInformation();
-        car1.run(123);
-        car1.displayInformation();
-        car1.run(259);
-        car1.displayInformation();
+        
 
 
 

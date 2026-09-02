@@ -8,7 +8,18 @@ public class PracticeObjectCar {
     double    price;
     double odometer;
 
+    public PracticeObjectCar(String brand, String model, String color, double price, double odometer) {
 
+        this.brand    =    brand;
+        this.model    =    model;
+        this.color    =    color;
+        this.price    =    price;
+        this.odometer = odometer;
+
+        this.displayInformation();
+
+
+    }
 
 
 
@@ -16,12 +27,12 @@ public class PracticeObjectCar {
     public double run(double distance) {
 
         System.out.println("La voiture à parcouru " + distance + " kilomètre.");
-        odometer += distance;
+        this.odometer += distance;
         return distance;
 
     }
 
     public void displayInformation() {
-        System.out.println("| Marque : " + brand + " | Model : " + model + " | Couleur : " + color + " | Prix : " + price + " | Couleur : " + color + " | Kilometre : " + odometer + " |");
+        System.out.println("| Marque : " + this.brand + " | Model : " + this.model + " | Couleur : " + this.color + " | Prix : " + this.price + "  | Kilometre : " + this.odometer + " |");
     }
 }

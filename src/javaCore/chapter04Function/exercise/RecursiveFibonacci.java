@@ -16,6 +16,7 @@ public class RecursiveFibonacci {
     
     
     public static int fibonacci(int n) {
+        // on "return" jusqu'a 1 et à partir de 2 on commence fibonacci
         if (n <= 1) {
             return n;
         }

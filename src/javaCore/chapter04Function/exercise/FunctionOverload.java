@@ -4,8 +4,11 @@ public class FunctionOverload {
 
     public static void main(String[] args) {
 
-        int result1 = sum(2, 8, 3);
+        int result1    = sum(2, 8);
+        double result2 = sum(7, 12, 5);
+
         System.out.println(result1);
+        System.out.println(result2);
 
     }
 
@@ -20,7 +23,6 @@ public class FunctionOverload {
         return number1 + number2 + number3;
 
     }
-
 
 
 }

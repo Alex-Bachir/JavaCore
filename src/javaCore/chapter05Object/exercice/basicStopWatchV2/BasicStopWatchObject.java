@@ -2,14 +2,27 @@ package javaCore.chapter05Object.exercice.basicStopWatchV2;
 
 public class BasicStopWatchObject {
 
+    String  name;
+    int  seconde;
+    int   minute;
+    int     hour;
     
-    int seconde = 0;
-    int minute  = 0;
-    int hour    = 0;
+
+
+    public BasicStopWatchObject(String name, int hour, int minute, int seconde) {
+
+        this.name    =    name;
+        this.hour    =    hour;
+        this.minute  =  minute; 
+        this.seconde = seconde;
+        
+    }
+
+
 
     public void displayTime() {
 
-        System.out.println("Temps : " + hour + " : " + minute + " : " + seconde );
+        System.out.println(name +" : " + hour + " : " + minute + " : " + seconde );
     }
 
     public void launch() throws InterruptedException {

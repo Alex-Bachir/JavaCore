@@ -18,11 +18,7 @@ public class PracticeObjectCar {
 
         this.displayInformation();
 
-
     }
-
-
-
 
     public double run(double distance) {
 

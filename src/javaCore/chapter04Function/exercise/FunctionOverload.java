@@ -6,12 +6,14 @@ public class FunctionOverload {
 
         // tester nombre positif et negatif et resultat qui vaut 0
 
-        System.out.println(sum(4, 6, 1));
-        System.out.println(sum(-5, -8, -3));
-        System.out.println(sum(5, -5));
-        System.out.println(sum(18, 2, -20));
-        System.out.println(sum(-20, 2, 18));
-        System.out.println(sum(1, 1, 1, 1));
+        System.out.println(sum    (4, 6, 1));
+        System.out.println(sum (-5, -8, -3));
+        System.out.println(sum      (5, -5));
+        System.out.println(sum (18, 2, -20));
+        System.out.println(sum (-20, 2, 18));
+
+        System.out.println(sum (1, 1, 1, 1));
+        System.out.println(sum (3, 8, 4, 1));
 
         
     }
@@ -31,6 +33,9 @@ public class FunctionOverload {
 
     
     }
+
+    // test à 4 paramètre
+
 
     public static int sum(int number1, int number2, int number3, int number4) {
 

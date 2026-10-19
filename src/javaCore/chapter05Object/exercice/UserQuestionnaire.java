@@ -11,6 +11,7 @@ public class UserQuestionnaire {
     public static void main(String[] args) {
 
         String pet = " ";
+        double result = 0;
         
 
         Scanner sc = new Scanner(System.in);
@@ -30,11 +31,14 @@ public class UserQuestionnaire {
         if (question.equalsIgnoreCase("oui")) {
             System.out.println("D'accord on continue !");
             System.out.println("Quel animal de compagnie aimez vous avoir à vos côté ?");
-            String pet = sc.nextLine();
+            pet = sc.nextLine();
             System.out.println("D'accord vous aimez partager des moment avec un " + pet + ".");
+            System.out.println("Que fais le resultat en divisant 5 par 2 ?");
+            result = sc.nextInt();
+            System.out.println("Vous avez trouvé " + result);
             System.out.println("Merci d'avoir participer au questionnaire !");
         } else {
-            System.out.println("D'accor don arrete là !");
+            System.out.println("D'accord on arrete là !");
         }
 
         sc.close();
@@ -43,6 +47,7 @@ public class UserQuestionnaire {
         System.out.println("Nom    : " + name);
         System.out.println("Age    : " + age + " ans");
         System.out.println("Animal : " + pet);
+        System.out.println("Calcule : " + result);
         
         
 

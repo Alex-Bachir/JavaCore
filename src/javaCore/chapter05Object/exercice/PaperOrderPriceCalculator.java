@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class PaperOrderPriceCalculator  {
     public static void main(String[] args) {
 
-        double valueAddedTax = 0.20;
-        int paperOrder;
-        String answer;
-        boolean isCompany;
+        
+        
+        
+        
 
         Scanner sc = new Scanner(System.in);
 
@@ -30,6 +30,11 @@ public class PaperOrderPriceCalculator  {
 
         System.out.println("Avant toute chose, êtes-vous une entreprise ? répondez par oui où par non. Merci.");
 
+        double valueAddedTax = 0.20;
+        boolean isCompany;
+        String answer;
+
+        // demande a l'utilisateur si c'est une entreprise ou pas afin de deduire automatiquement la TVA
         answer = sc.nextLine().trim();
         if(answer.equalsIgnoreCase("oui")) {
             isCompany = true;
@@ -39,6 +44,9 @@ public class PaperOrderPriceCalculator  {
             isCompany = false;
             System.out.println("Vous êtes un particulier on appliqueras la TVA de 20%");
         }
+
+        // la boucle do while demande un nombre de feuille entre 200 et 200_000 
+        int paperOrder;
         
         do {
             System.out.println("Si toujours partant combien vous faudra-t-il de feuilles ?");
@@ -49,9 +57,7 @@ public class PaperOrderPriceCalculator  {
         } while (!(paperOrder >= 200 && paperOrder <= 200_000));
 
 
-        double result = paperOrder * 0.01 + valueAddedTax;
-
-        System.out.println(result);
+        
 
 
         

@@ -23,7 +23,7 @@ public class UserQuestionnaire {
         int age = sc.nextInt();
         // ici on consomme le \n du buffer car sinon le prochain nextLine il sera sauté
         sc.nextLine();
-        System.out.println("Merci pour l'information ! Vous avez donc " + age + " ans.");
+        System.out.println("Merci pour l'information ! Vous avez " + age + " ans.");
         System.out.println("Voulez vous continuez le questionnaire ?");
         String question = sc.nextLine();
 
@@ -32,10 +32,10 @@ public class UserQuestionnaire {
             System.out.println("D'accord on continue !");
             System.out.println("Quel animal de compagnie aimez vous avoir à vos côté ?");
             pet = sc.nextLine();
-            System.out.println("D'accord vous aimez partager des moment avec un " + pet + ".");
+            System.out.println("D'accord vous aimez les " + pet + ".");
             System.out.println("Que fais le resultat en divisant 5 par 2 ?");
-            result = sc.nextInt();
-            System.out.println("Vous avez trouvé " + result);
+            result = sc.nextFloat();
+            System.out.println("Vous avez trouvé " + result + ".");
             System.out.println("Merci d'avoir participer au questionnaire !");
         } else {
             System.out.println("D'accord on arrete là !");

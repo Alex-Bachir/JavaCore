@@ -11,7 +11,7 @@ public class ScannerWeek {
 
         do {
             System.out.println("Quel jour sommes nous ?");
-            reponse = sc.nextLine();
+            reponse = sc.nextLine().trim();
 
             // recommence tant que la réponse n’est pas un des jours "!"
         } while (!( reponse.equalsIgnoreCase("lundi")      ||

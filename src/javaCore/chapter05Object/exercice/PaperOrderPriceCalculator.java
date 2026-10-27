@@ -4,10 +4,15 @@ import java.util.Scanner;
 
 public class PaperOrderPriceCalculator  {
     public static void main(String[] args) {
+        
+        final int PRICE_FOR_50K_SHEETS = 250;
+        final int PRICE_FOR_15K_SHEETS = 125;
+        final int PRICE_FOR_10K_SHEETS =  50;
 
-        
-        
-        
+        int count50k = 0;
+        int count15k = 0;
+        int count10k = 0;
+
         
 
         Scanner sc = new Scanner(System.in);
@@ -19,18 +24,19 @@ public class PaperOrderPriceCalculator  {
         Warning ! Une commande peut se faire à partir de 200 feuilles jusqu'à 200.000 feuilles.
 
         Exemples de tarifs :
-          -  5.000 feuilles :  50 € (5.000 x 0.01)
-          - 15.000 feuilles : 125 € (10.000 x 0.01 + 5.000 x 0.005)
-          - 50.000 feuilles : 250 € (10.000 x 0.01 + 20.000 x 0.005 + 20.000 x 0.0025)
+          -  10.000 feuilles :  50€ (5.000 x 0.01)
+          - 15.000 feuilles : 125€ (10.000 x 0.01 + 5.000 x 0.005)
+          - 50.000 feuilles : 250€ (10.000 x 0.01 + 20.000 x 0.005 + 20.000 x 0.0025)
 
-        Livraison offerte pour toute commande supérieure à 200 €, sinon 9.99 €.
+        Livraison offerte pour toute commande supérieure à 200€, sinon 9.99€.
         Les prix sont hors taxes, une TVA de 20 % sera appliquée.
 
         """);
 
         System.out.println("Avant toute chose, êtes-vous une entreprise ? répondez par oui où par non. Merci.");
 
-        double valueAddedTax = 0.20;
+        double valueAddedTax;
+        double sheetPrice;
         boolean isCompany;
         String answer;
 
@@ -42,6 +48,7 @@ public class PaperOrderPriceCalculator  {
             System.out.println("Vous êtes une entreprise on appliquera pas la TVA");
         } else {
             isCompany = false;
+            valueAddedTax = 0.20;
             System.out.println("Vous êtes un particulier on appliqueras la TVA de 20%");
         }
 
@@ -56,6 +63,8 @@ public class PaperOrderPriceCalculator  {
             }
         } while (!(paperOrder >= 200 && paperOrder <= 200_000));
 
+        
+
 
         
 
@@ -63,3 +72,34 @@ public class PaperOrderPriceCalculator  {
         
     }
 }
+
+
+
+
+
+
+
+
+
+// if (paperOrder >= 50_000) {
+        //     System.out.println("La commande est de " + paperOrder + ".");
+        //     paperOrder -= 50_000;
+        //     count50k ++;
+        //     System.out.println("Il reste " + paperOrder + " feuilles. " + count50k + " donc " +  PRICE_FOR_50K_SHEETS);
+
+        // }
+        // if (paperOrder >= 15_000) {
+        //     paperOrder -= 15_000;
+        //     count15k++;
+        //     System.out.println("Il reste" + paperOrder + " feuilles. " + count15k + " donc " +  PRICE_FOR_15K_SHEETS);
+        // }
+        // if (paperOrder >= 10_000) {
+        //     paperOrder -= 10_000;
+        //     count10k++;
+        //     System.out.println("Il reste " + paperOrder + " feuilles. " + count10k + " donc " +  PRICE_FOR_10K_SHEETS);
+        // }
+
+        // double totalPrice = ((PRICE_FOR_50K_SHEETS * count50k) + (PRICE_FOR_15K_SHEETS * count15k) + (PRICE_FOR_10K_SHEETS * count10k) + (paperOrder * 0.01));
+        // double totalPriceafterVAT = totalPrice + (totalPrice * valueAddedTax);
+
+        // System.out.println("le prix de la commande est de " + totalPrice + " euros. Apres la TVA " + totalPriceafterVAT + " euros.");

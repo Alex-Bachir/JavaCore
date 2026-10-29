@@ -4,17 +4,8 @@ import java.util.Scanner;
 
 public class PaperOrderPriceCalculator  {
     public static void main(String[] args) {
-        
-        final int PRICE_FOR_50K_SHEETS = 250;
-        final int PRICE_FOR_15K_SHEETS = 125;
-        final int PRICE_FOR_10K_SHEETS =  50;
 
-        int count50k = 0;
-        int count15k = 0;
-        int count10k = 0;
-
-        
-
+    
         Scanner sc = new Scanner(System.in);
 
         System.out.println("""
@@ -36,7 +27,6 @@ public class PaperOrderPriceCalculator  {
         System.out.println("Avant toute chose, êtes-vous une entreprise ? répondez par oui où par non. Merci.");
 
         double valueAddedTax;
-        double sheetPrice;
         boolean isCompany;
         String answer;
 
@@ -44,11 +34,11 @@ public class PaperOrderPriceCalculator  {
         answer = sc.nextLine().trim();
         if(answer.equalsIgnoreCase("oui")) {
             isCompany = true;
-            valueAddedTax = 0;
+            valueAddedTax = 1;
             System.out.println("Vous êtes une entreprise on appliquera pas la TVA");
         } else {
             isCompany = false;
-            valueAddedTax = 0.20;
+            valueAddedTax = 1.20;
             System.out.println("Vous êtes un particulier on appliqueras la TVA de 20%");
         }
 
@@ -62,6 +52,35 @@ public class PaperOrderPriceCalculator  {
                 System.out.println("Nombres de feuilles incorectes. Veuillez vous réferrer au message de bienvenus et au tarification pour insérer une commande acceptable.");
             }
         } while (!(paperOrder >= 200 && paperOrder <= 200_000));
+
+        
+
+        double priceUnder10k = 0.01;
+        double priceBetween10kAnd20k = 0.005;
+        double priceUpper30k = 0.0025;
+        double result = 0;
+
+        for(int i = 1; i <= paperOrder; i++) {
+             
+            if (i <= 10000) {
+                result += priceUnder10k;
+            } else if (i <= 30000) {
+                result += priceBetween10kAnd20k;
+            } else {
+                result += priceUpper30k;
+            }
+        }
+
+        if (result <= 200) {
+            result += 9.99;
+        }
+
+        double resultAfterVAT = result * valueAddedTax;
+
+        System.out.println("La commande de " + paperOrder + " feuilles sera facturés " + String.format("%.2f",resultAfterVAT) + " euros.");
+
+
+
 
         
 
